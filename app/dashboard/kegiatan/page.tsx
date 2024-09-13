@@ -3,7 +3,6 @@ import EmptyState from '@/components/empty-state';
 import PageContainer from '@/components/layout/page-container';
 import { Button } from '@/components/ui/button';
 import { Heading } from '@/components/ui/heading';
-import { Separator } from '@/components/ui/separator';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { kegiatan } from '@/constants/data';
 import { ChevronsRight } from 'lucide-react';

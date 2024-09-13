@@ -43,19 +43,15 @@ export const CreateProfileOne: React.FC<ProfileFormType> = ({
 }) => {
   const params = useParams();
   const router = useRouter();
-  const [open, setOpen] = useState(false);
+  const [setOpen] = useState(false);
   const [loading, setLoading] = useState(false);
-  const [imgLoading, setImgLoading] = useState(false);
   const title = initialData ? 'Edit product' : 'Create Your Profile';
   const description = initialData
     ? 'Edit a product.'
     : 'To create your resume, we first need some basic information about you.';
-  const toastMessage = initialData ? 'Product updated.' : 'Product created.';
-  const action = initialData ? 'Save changes' : 'Create';
   const [previousStep, setPreviousStep] = useState(0);
   const [currentStep, setCurrentStep] = useState(0);
   const [data, setData] = useState({});
-  const delta = currentStep - previousStep;
 
   const defaultValues = {
     jobs: [
@@ -112,7 +108,6 @@ export const CreateProfileOne: React.FC<ProfileFormType> = ({
     } catch (error: any) {
     } finally {
       setLoading(false);
-      setOpen(false);
     }
   };
 
@@ -187,7 +182,6 @@ export const CreateProfileOne: React.FC<ProfileFormType> = ({
             disabled={loading}
             variant="destructive"
             size="sm"
-            onClick={() => setOpen(true)}
           >
             <Trash className="h-4 w-4" />
           </Button>

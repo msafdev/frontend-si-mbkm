@@ -16,7 +16,7 @@ import {
 import { useRouter } from 'next/navigation';
 
 export function UserNav() {
-  const [session, setSession] = useState({
+  const [session] = useState({
     user: {
       name: 'John Doe',
       email: 'john@example.com',
