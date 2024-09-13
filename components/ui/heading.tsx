@@ -6,8 +6,12 @@ interface HeadingProps {
 export const Heading: React.FC<HeadingProps> = ({ title, description }) => {
   return (
     <div className="flex flex-col gap-y-3">
-      <h2 className="text-3xl font-bold tracking-tight">{title}</h2>
-      <p className="text-sm text-muted-foreground">{description}</p>
+      <h2 className="max-w-lg text-2xl font-semibold tracking-tight md:text-3xl">
+        {title}
+      </h2>
+      <p className="max-w-lg text-sm text-muted-foreground md:text-base">
+        {description}
+      </p>
     </div>
   );
 };

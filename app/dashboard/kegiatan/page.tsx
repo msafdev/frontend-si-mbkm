@@ -18,16 +18,15 @@ export default function page() {
     <PageContainer scrollable={true}>
       <div className="flex h-full flex-col gap-y-2">
         <Breadcrumbs items={breadcrumbItems} />
-        <div className="flex flex-col items-start justify-between gap-y-4 lg:flex-row">
+        <div className="flex flex-col items-start justify-between gap-y-4 lg:flex-row mb-2">
           <Heading
             title={`Kegiatan`}
-            description="Kumpulan program SI-MBKM yang tersedia."
+            description="Kegiatan yang sedang berlangsung dan status pendaftaran program. Cek kembali informasi kegiatan yang sedang berlangsung dengan dosen/pihak yang bersangkutan."
           />
           <Button className="text-xs md:text-sm">Sejarah Kegiatan</Button>
         </div>
-        <Separator className="mt-4" />
         <Tabs defaultValue="active" className="space-y-4">
-          <TabsList>
+          <TabsList className='mb-2'>
             <TabsTrigger value="active">Kegiatan Aktif</TabsTrigger>
             <TabsTrigger value="status">Status Pendaftaran</TabsTrigger>
           </TabsList>

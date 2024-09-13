@@ -33,22 +33,14 @@ interface DataTableProps<TData, TValue> {
   columns: ColumnDef<TData, TValue>[];
   data: TData[];
   searchKey: string;
+  filterKey: { id: string; name: string }[];
 }
-
-let filterKey: string[] = [
-  'IISMA',
-  'Pertukaran Mahasiswa Merdeka',
-  'Bootcamp',
-  'Bangkit Academy',
-  'Magang MSIB',
-  'Studi Independen',
-  'Kampus Mengajar'
-];
 
 export function DataTable<TData, TValue>({
   columns,
   data,
-  searchKey
+  searchKey,
+  filterKey
 }: DataTableProps<TData, TValue>) {
   const table = useReactTable({
     data,
@@ -73,25 +65,29 @@ export function DataTable<TData, TValue>({
         />
         <Select
           onValueChange={(value) => {
-            table.getColumn('category')?.setFilterValue(value);
+            table.getColumn('kegiatanCategoryName')?.setFilterValue(value);
           }}
         >
           <SelectTrigger className="ml-auto w-full max-w-64">
-            <SelectValue placeholder="Semua" />
+            <SelectValue placeholder="Kategori" />
           </SelectTrigger>
           <SelectContent className="text-ellipsis">
             <SelectGroup>
               <SelectItem value="">Semua</SelectItem>
-              {filterKey.map((key) => (
-                <SelectItem key={key} value={key} className="text-ellipsis">
-                  {key}
+              {filterKey.map((item, index) => (
+                <SelectItem
+                  key={index}
+                  value={item.name}
+                  className="text-ellipsis"
+                >
+                  {item.name}
                 </SelectItem>
               ))}
             </SelectGroup>
           </SelectContent>
         </Select>
       </div>
-      <ScrollArea className="h-[calc(80vh-220px)] rounded-md border md:h-[calc(80svh-180px)]">
+      <ScrollArea className="relative h-[calc(80vh-220px)] w-full max-w-[calc(100vw-32px)] rounded-md border md:h-[calc(80svh-180px)]">
         <Table className="relative">
           <TableHeader>
             {table.getHeaderGroups().map((headerGroup) => (
@@ -142,7 +138,7 @@ export function DataTable<TData, TValue>({
         </Table>
         <ScrollBar orientation="horizontal" />
       </ScrollArea>
-      <div className="flex items-center justify-end space-x-2 pt-2">
+      <div className="flex items-center justify-end space-x-2">
         <div className="space-x-2">
           <Button
             variant="outline"

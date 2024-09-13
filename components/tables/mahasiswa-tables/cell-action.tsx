@@ -8,13 +8,13 @@ import {
   DropdownMenuLabel,
   DropdownMenuTrigger
 } from '@/components/ui/dropdown-menu';
-import { Program } from '@/constants/data';
+import { Mahasiswa } from '@/constants/data';
 import { Edit, MoreHorizontal, Trash, HelpCircle } from 'lucide-react';
 import { useRouter } from 'next/navigation';
 import { useState } from 'react';
 
 interface CellActionProps {
-  data: Program;
+  data: Mahasiswa;
 }
 
 export const CellAction: React.FC<CellActionProps> = ({ data }) => {
@@ -42,12 +42,12 @@ export const CellAction: React.FC<CellActionProps> = ({ data }) => {
         <DropdownMenuContent align="end">
           <DropdownMenuLabel>Actions</DropdownMenuLabel>
           <DropdownMenuItem
-            onClick={() => router.push(`/dashboard/program/${data.id}`)}
+            onClick={() => router.push(`/dashboard/mahasiswa/${data.nim}`)}
           >
             <HelpCircle className="mr-2 h-4 w-4" /> Detail
           </DropdownMenuItem>
           <DropdownMenuItem
-            onClick={() => router.push(`/dashboard/program/update/${data.id}`)}
+            onClick={() => router.push(`/dashboard/mahasiswa/update/${data.nim}`)}
           >
             <Edit className="mr-2 h-4 w-4" /> Update
           </DropdownMenuItem>

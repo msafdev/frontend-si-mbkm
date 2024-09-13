@@ -9,19 +9,31 @@ export type User = {
   status: string;
 };
 
+export type Mahasiswa = {
+  nim: number;
+  fullname: string;
+  email: string;
+  kegiatan: {
+    company: string;
+    semester: string;
+    role: string;
+    category: {
+      id: string;
+      name: string;
+    };
+  };
+  status: string;
+};
+
 export type Program = {
   id: number;
   company: string;
   role: string;
   description: string;
-  category:
-    | 'Magang MSIB'
-    | 'Studi Independen'
-    | 'Kampus Mengajar'
-    | 'IISMA'
-    | 'Pertukaran Mahasiswa Merdeka'
-    | 'Bootcamp'
-    | 'Bangkit Academy';
+  category: {
+    id: string;
+    name: string;
+  };
   status: string;
   date: string;
 };
@@ -63,6 +75,39 @@ export type Kegiatan = {
     point?: number;
   };
 };
+
+export const mahasiswa: Mahasiswa[] = [
+  {
+    nim: 21120239818347,
+    fullname: 'Candice Schiner',
+    email: 'mail@example.com',
+    kegiatan: {
+      company: 'Dell',
+      semester: 'Genap 2023/2024',
+      role: 'Frontend Developer',
+      category: {
+        id: 'magang-msib',
+        name: 'Magang MSIB'
+      }
+    },
+    status: 'Berjalan'
+  },
+  {
+    nim: 21029184726381,
+    fullname: 'John Doe',
+    email: 'johndoe@mail.com',
+    kegiatan: {
+      company: 'TechCorp',
+      semester: 'Genap 2023/2024',
+      role: 'Backend Developer',
+      category: {
+        id: 'magang-msib',
+        name: 'Magang MSIB'
+      }
+    },
+    status: 'Selesai'
+  }
+];
 
 export const users: User[] = [
   {
@@ -153,7 +198,10 @@ export const programs: Program[] = [
     company: 'Dell',
     role: 'Frontend Developer',
     description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-    category: 'Magang MSIB',
+    category: {
+      id: 'magang-msib',
+      name: 'Magang MSIB'
+    },
     status: 'Active',
     date: '2021-07-01'
   },
@@ -162,16 +210,22 @@ export const programs: Program[] = [
     company: 'TechCorp',
     role: 'Backend Developer',
     description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-    category: 'Magang MSIB',
+    category: {
+      id: 'magang-msib',
+      name: 'Magang MSIB'
+    },
     status: 'Active',
     date: '2021-07-01'
   },
   {
     id: 3,
     company: 'WebTech',
-    role: 'UI Designer',
+    role: 'Mentor UI Designer',
     description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-    category: 'Studi Independen',
+    category: {
+      id: 'kampus-mengajar',
+      name: 'Kampus Mengajar'
+    },
     status: 'Active',
     date: '2021-07-01'
   },
@@ -180,7 +234,10 @@ export const programs: Program[] = [
     company: 'Innovate Inc.',
     role: 'Fullstack Developer',
     description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-    category: 'Magang MSIB',
+    category: {
+      id: 'magang-msib',
+      name: 'Magang MSIB'
+    },
     status: 'Inactive',
     date: '2021-07-01'
   },
@@ -189,16 +246,22 @@ export const programs: Program[] = [
     company: 'TechGuru',
     role: 'Product Manager',
     description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-    category: 'Kampus Mengajar',
+    category: {
+      id: 'magang-msib',
+      name: 'Magang MSIB'
+    },
     status: 'Active',
     date: '2021-07-01'
   },
   {
     id: 6,
-    company: 'CodeGenius',
-    role: 'QA Engineer',
+    company: 'Dicoding Indonesia',
+    role: 'Mentor Android Developer',
     description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-    category: 'Magang MSIB',
+    category: {
+      id: 'kampus-mengajar',
+      name: 'Kampus Mengajar'
+    },
     status: 'Active',
     date: '2021-07-01'
   },
@@ -207,16 +270,22 @@ export const programs: Program[] = [
     company: 'SoftWorks',
     role: 'UX Designer',
     description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-    category: 'Studi Independen',
+    category: {
+      id: 'magang-msib',
+      name: 'Magang MSIB'
+    },
     status: 'Active',
     date: '2021-07-01'
   },
   {
     id: 8,
-    company: 'DevCraft',
-    role: 'DevOps Engineer',
+    company: 'Cambridge University',
+    role: 'Visiting Lecturer',
     description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-    category: 'Magang MSIB',
+    category: {
+      id: 'iisma',
+      name: 'IISMA'
+    },
     status: 'Active',
     date: '2021-07-01'
   },
@@ -225,7 +294,10 @@ export const programs: Program[] = [
     company: 'Harvard University',
     role: 'Visiting Student',
     description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-    category: 'IISMA',
+    category: {
+      id: 'iisma',
+      name: 'IISMA'
+    },
     status: 'Active',
     date: '2021-07-01'
   },
@@ -234,7 +306,10 @@ export const programs: Program[] = [
     company: 'Denpasar University',
     role: 'Visiting Student',
     description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-    category: 'Pertukaran Mahasiswa Merdeka',
+    category: {
+      id: 'student-exchange',
+      name: 'Pertukaran Mahasiswa Merdeka'
+    },
     status: 'Active',
     date: '2021-07-01'
   },
@@ -243,7 +318,10 @@ export const programs: Program[] = [
     company: 'Google, GoTo, and Traveloka',
     role: 'Cloud Computing Cohort',
     description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-    category: 'Bangkit Academy',
+    category: {
+      id: 'bangkit-academy',
+      name: 'Bangkit Academy'
+    },
     status: 'Active',
     date: '2021-07-01'
   },
@@ -252,7 +330,10 @@ export const programs: Program[] = [
     company: 'Google, GoTo, and Traveloka',
     role: 'Mobile Programming Cohort',
     description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-    category: 'Bangkit Academy',
+    category: {
+      id: 'bangkit-academy',
+      name: 'Bangkit Academy'
+    },
     status: 'Active',
     date: '2021-07-01'
   },
@@ -261,7 +342,10 @@ export const programs: Program[] = [
     company: 'Google, GoTo, and Traveloka',
     role: 'Machine Learning Cohort',
     description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-    category: 'Bangkit Academy',
+    category: {
+      id: 'bangkit-academy',
+      name: 'Bangkit Academy'
+    },
     status: 'Active',
     date: '2021-07-01'
   }
@@ -400,10 +484,10 @@ export const navItems: Record<
     items: [
       {
         title: 'Data Mahasiswa',
-        href: '/dashboard/data-mahasiswa',
+        href: '/dashboard/mahasiswa',
         icon: 'graduation-cap',
-        label: 'data-mahasiswa'
-      },
+        label: 'mahasiswa'
+      }
     ]
   },
   auth: {

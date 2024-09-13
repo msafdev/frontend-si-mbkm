@@ -9,7 +9,8 @@ export const columns: ColumnDef<Program>[] = [
     header: 'Perusahaan'
   },
   {
-    accessorKey: 'category',
+    id: 'categoryName',
+    accessorKey: 'category.name',
     header: 'Kategori'
   },
   {

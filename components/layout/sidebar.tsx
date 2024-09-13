@@ -45,7 +45,7 @@ export default function Sidebar({ className }: SidebarProps) {
         )}
         onClick={handleToggle}
       />
-      <div className="flex flex-col gap-y-4 px-3 py-6 h-[calc(100svh-89px)] overflow-y-scroll">
+      <div className="flex flex-col gap-y-4 px-3 py-6 h-[calc(100svh-89px)] overflow-y-auto">
         <DashboardNav items={navItems} />
       </div>
     </aside>
