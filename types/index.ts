@@ -11,12 +11,10 @@ export interface NavItem {
 }
 
 export interface NavItemWithChildren extends NavItem {
-  items: NavItemWithChildren[];
+  items: NavItem[];
 }
 
-export interface NavItemWithOptionalChildren extends NavItem {
-  items?: NavItemWithChildren[];
-}
+export type NavItemOrSeparator = NavItem | NavItemWithChildren | { separator: true };
 
 export interface FooterItem {
   title: string;
@@ -26,7 +24,3 @@ export interface FooterItem {
     external?: boolean;
   }[];
 }
-
-export type MainNavItem = NavItemWithOptionalChildren;
-
-export type SidebarNavItem = NavItemWithChildren;

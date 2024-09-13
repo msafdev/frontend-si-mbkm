@@ -131,13 +131,18 @@ export function BarGraph() {
   const [activeChart, setActiveChart] =
     React.useState<keyof typeof chartConfig>('desktop');
 
-  const total = React.useMemo(
+  const total: { desktop: number; mobile: number; views: number } = React.useMemo(
     () => ({
       desktop: chartData.reduce((acc, curr) => acc + curr.desktop, 0),
-      mobile: chartData.reduce((acc, curr) => acc + curr.mobile, 0)
+      mobile: chartData.reduce((acc, curr) => acc + curr.mobile, 0),
+      views: 0 // Add a placeholder value for the 'views' property
     }),
     []
   );
+
+  const formatNumber = React.useCallback((value: number) => {
+    return value.toLocaleString('en-US');
+  }, []);
 
   return (
     <Card>
@@ -162,7 +167,7 @@ export function BarGraph() {
                   {chartConfig[chart].label}
                 </span>
                 <span className="text-lg font-bold leading-none sm:text-3xl">
-                  {total[key as keyof typeof total].toLocaleString()}
+                  {formatNumber(total[chart])}
                 </span>
               </button>
             );

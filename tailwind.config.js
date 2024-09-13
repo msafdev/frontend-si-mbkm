@@ -17,6 +17,9 @@ module.exports = {
       }
     },
     extend: {
+      backgroundImage: {
+        'auth-pattern': "url('/background/bg-undip.jpg')",
+      },
       colors: {
         border: 'hsl(var(--border))',
         input: 'hsl(var(--input))',

@@ -1,18 +1,18 @@
 import { Breadcrumbs } from '@/components/breadcrumbs';
 import PageContainer from '@/components/layout/page-container';
-import { UserClient } from '@/components/tables/user-tables/client';
-import { users } from '@/constants/data';
+import { ProgramTable } from '@/components/tables/program-tables/program-table';
+import { programs } from '@/constants/data';
 
 const breadcrumbItems = [
   { title: 'Dashboard', link: '/dashboard' },
-  { title: 'User', link: '/dashboard/user' }
+  { title: 'Program', link: '/dashboard/program' }
 ];
 export default function page() {
   return (
-    <PageContainer>
-      <div className="gap-y-2 flex flex-col">
+    <PageContainer scrollable>
+      <div className="flex flex-col gap-y-2">
         <Breadcrumbs items={breadcrumbItems} />
-        <UserClient data={users} />
+        <ProgramTable data={programs} />
       </div>
     </PageContainer>
   );

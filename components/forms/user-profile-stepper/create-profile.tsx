@@ -193,7 +193,7 @@ export const CreateProfileOne: React.FC<ProfileFormType> = ({
           </Button>
         )}
       </div>
-      <Separator />
+      <Separator className='mt-4'/>
       <div>
         <ul className="flex gap-4">
           {steps.map((step, index) => (
