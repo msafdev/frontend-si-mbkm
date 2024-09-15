@@ -161,10 +161,9 @@ export const DocumentForm: React.FC<DocumentFormProps> = ({ initialData }) => {
 
   return (
     <>
-      <div className="flex items-center justify-between">
+      <div className="flex items-center justify-between border-b pb-4">
         <Heading title={title} description={description} />
       </div>
-      <Separator className="mb-4 mt-4" />
       <Form {...form}>
         <form
           onSubmit={form.handleSubmit(onSubmit)}
@@ -200,16 +199,15 @@ export const DocumentForm: React.FC<DocumentFormProps> = ({ initialData }) => {
             description="Unggah file dalam format PDF dengan ukuran maksimal 2 MB "
             form={form}
           />
-          <div className="mt-2 flex w-full items-center justify-end gap-x-4">
+          <div className="flex w-full items-center justify-end gap-x-3">
             <Button
               disabled={loading}
               variant="secondary"
-              size={'lg'}
               onClick={() => router.push('/dashboard/')}
             >
               Batal
             </Button>
-            <Button disabled={loading} type="submit" size={'lg'}>
+            <Button disabled={loading} type="submit">
               {action}
             </Button>
           </div>

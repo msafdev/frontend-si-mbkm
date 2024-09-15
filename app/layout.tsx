@@ -8,8 +8,18 @@ import './globals.css';
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
-  title: 'Next Shadcn',
-  description: 'Basic dashboard with Next.js and Shadcn'
+  title: {
+    default: 'SIMBKM',
+    template: 'SIMBKM | %s'
+  },
+  description:
+    'Sistem Informasi Merdeka Belajar Kampus Merdeka (SIMBKM) Universitas Diponegoro Departemen Teknik Komputer. Aplikasi ini digunakan untuk mempermudah mahasiswa dalam melakukan pendaftaran kegiatan dan program yang diselenggarakan oleh Kampus Merdeka.',
+  keywords: [
+    'SIMBKM',
+    'Kampus Merdeka',
+    'Universitas Diponegoro',
+    'Departemen Teknik Komputer'
+  ]
 };
 
 export default async function RootLayout({

@@ -26,7 +26,7 @@ export const MahasiswaTable: React.FC<MahasiswaProps> = ({ data }) => {
 
   return (
     <>
-      <div className="mb-2 flex flex-col items-start justify-between gap-y-4 lg:flex-row">
+      <div className="pb-4 border-b flex flex-col items-start justify-between gap-y-4 lg:flex-row">
         <Heading
           title={`Mahasiswa (${data.length})`}
           description="Kumpulan Mahasiswa SI-MBKM yang tersedia. Cek kembali informasi Mahasiswa yang tersedia di situs resmi Kampus Merdeka."

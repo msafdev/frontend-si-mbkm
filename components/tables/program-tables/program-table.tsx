@@ -26,7 +26,7 @@ export const ProgramTable: React.FC<ProgramProps> = ({ data }) => {
 
   return (
     <>
-      <div className="flex flex-col items-start justify-between gap-y-4 lg:flex-row mb-2">
+      <div className="flex flex-col items-start justify-between gap-y-4 lg:flex-row pb-4 border-b">
         <Heading
           title={`Program (${data.length})`}
           description="Kumpulan program SI-MBKM yang tersedia. Cek kembali informasi program yang tersedia di situs resmi Kampus Merdeka."

@@ -17,7 +17,7 @@ export default function page() {
     <PageContainer scrollable={true}>
       <div className="flex h-full flex-col gap-y-2">
         <Breadcrumbs items={breadcrumbItems} />
-        <div className="flex flex-col items-start justify-between gap-y-4 lg:flex-row mb-2">
+        <div className="flex flex-col items-start justify-between gap-y-4 lg:flex-row pb-4 border-b">
           <Heading
             title={`Kegiatan`}
             description="Kegiatan yang sedang berlangsung dan status pendaftaran program. Cek kembali informasi kegiatan yang sedang berlangsung dengan dosen/pihak yang bersangkutan."
