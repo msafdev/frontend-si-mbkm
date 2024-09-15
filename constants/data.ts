@@ -465,17 +465,10 @@ export const navItems: Record<
         label: 'logbook'
       },
       {
-        title: 'Kanban',
-        href: '/dashboard/kanban',
-        icon: 'kanban',
-        label: 'kanban'
-      },
-      { separator: true },
-      {
-        title: 'Dokumen',
-        href: '/dashboard/dokumen',
-        icon: 'help',
-        label: 'dokumen'
+        title: 'Konversi',
+        href: '/dashboard/konversi',
+        icon: 'arrow-left-right',
+        label: 'konversi'
       }
     ]
   },
@@ -490,15 +483,26 @@ export const navItems: Record<
       }
     ]
   },
-  auth: {
-    label: 'Akun',
+  lampiran: {
+    label: 'Lampiran',
     items: [
+      {
+        title: 'Dokumen',
+        href: '/dashboard/dokumen',
+        icon: 'help',
+        label: 'dokumen'
+      },
       {
         title: 'Sertifikat',
         href: '/dashboard/sertifikat',
         icon: 'book-check',
         label: 'sertifikat'
-      },
+      }
+    ]
+  },
+  auth: {
+    label: 'Akun',
+    items: [
       {
         title: 'Profil',
         href: '/dashboard/profil',

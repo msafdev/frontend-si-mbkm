@@ -33,7 +33,8 @@ import {
   FileCheck,
   BookOpenText,
   GraduationCap,
-  BookCheck
+  BookCheck,
+  ArrowLeftRight
 } from 'lucide-react';
 
 export type Icon = LucideIcon;
@@ -88,5 +89,6 @@ export const Icons = {
   'file-check': FileCheck,
   'book-open-text': BookOpenText,
   'graduation-cap': GraduationCap,
-  'book-check': BookCheck
+  'book-check': BookCheck,
+  'arrow-left-right': ArrowLeftRight
 };
