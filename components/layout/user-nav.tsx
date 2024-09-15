@@ -18,8 +18,8 @@ import { useRouter } from 'next/navigation';
 export function UserNav() {
   const [session] = useState({
     user: {
-      name: 'John Doe',
-      email: 'john@example.com',
+      name: 'Muhammad Salman Alfarisi',
+      email: 'salman@gmail.com',
       image: 'https://github.com/msafdev.png'
     }
   });
@@ -36,10 +36,10 @@ export function UserNav() {
       <DropdownMenuTrigger asChild>
         <Button
           variant="ghost"
-          className="relative size-8 md:size-9 rounded-full"
+          className="relative size-8 rounded-full md:size-9"
           onClick={() => setIsOpen(!isOpen)}
         >
-          <Avatar className="size-8 md:size-9 overflow-hidden">
+          <Avatar className="size-8 overflow-hidden md:size-9">
             <AvatarImage
               src={session.user?.image ?? ''}
               alt={session.user?.name ?? ''}
@@ -62,25 +62,11 @@ export function UserNav() {
           </DropdownMenuLabel>
           <DropdownMenuSeparator />
           <DropdownMenuGroup>
-            <DropdownMenuItem>
-              Profile
-              <DropdownMenuShortcut>⇧⌘P</DropdownMenuShortcut>
-            </DropdownMenuItem>
-            <DropdownMenuItem>
-              Billing
-              <DropdownMenuShortcut>⌘B</DropdownMenuShortcut>
-            </DropdownMenuItem>
-            <DropdownMenuItem>
-              Settings
-              <DropdownMenuShortcut>⌘S</DropdownMenuShortcut>
-            </DropdownMenuItem>
-            <DropdownMenuItem>New Team</DropdownMenuItem>
+            <DropdownMenuItem>Akun</DropdownMenuItem>
+            <DropdownMenuItem>Bantuan</DropdownMenuItem>
           </DropdownMenuGroup>
           <DropdownMenuSeparator />
-          <DropdownMenuItem onClick={handleSignOut}>
-            Log out
-            <DropdownMenuShortcut>⇧⌘Q</DropdownMenuShortcut>
-          </DropdownMenuItem>
+          <DropdownMenuItem onClick={handleSignOut}>Keluar</DropdownMenuItem>
         </DropdownMenuContent>
       )}
     </DropdownMenu>
