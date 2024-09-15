@@ -9,7 +9,12 @@ import {
   DropdownMenuTrigger
 } from '@/components/ui/dropdown-menu';
 import { Mahasiswa } from '@/constants/data';
-import { Edit, MoreHorizontal, Trash, HelpCircle } from 'lucide-react';
+import {
+  MoreHorizontal,
+  BookOpenText,
+  FileCheck,
+  ArrowLeftRight
+} from 'lucide-react';
 import { useRouter } from 'next/navigation';
 import { useState } from 'react';
 
@@ -42,17 +47,25 @@ export const CellAction: React.FC<CellActionProps> = ({ data }) => {
         <DropdownMenuContent align="end">
           <DropdownMenuLabel>Actions</DropdownMenuLabel>
           <DropdownMenuItem
-            onClick={() => router.push(`/dashboard/mahasiswa/${data.nim}`)}
+            onClick={() =>
+              router.push(`/dashboard/mahasiswa/laporan/${data.nim}`)
+            }
           >
-            <HelpCircle className="mr-2 h-4 w-4" /> Detail
+            <FileCheck className="mr-2 h-4 w-4" /> Laporan
           </DropdownMenuItem>
           <DropdownMenuItem
-            onClick={() => router.push(`/dashboard/mahasiswa/update/${data.nim}`)}
+            onClick={() =>
+              router.push(`/dashboard/mahasiswa/logbook/${data.nim}`)
+            }
           >
-            <Edit className="mr-2 h-4 w-4" /> Update
+            <BookOpenText className="mr-2 h-4 w-4" /> Logbook
           </DropdownMenuItem>
-          <DropdownMenuItem onClick={() => setOpen(true)}>
-            <Trash className="mr-2 h-4 w-4" /> Delete
+          <DropdownMenuItem
+            onClick={() =>
+              router.push(`/dashboard/mahasiswa/konversi/${data.nim}`)
+            }
+          >
+            <ArrowLeftRight className="mr-2 h-4 w-4" /> Konversi
           </DropdownMenuItem>
         </DropdownMenuContent>
       </DropdownMenu>
